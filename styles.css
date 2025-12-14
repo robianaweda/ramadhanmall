@@ -482,12 +482,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .product-price {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 .add-to-cart {
@@ -499,6 +502,8 @@ header {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .add-to-cart:hover {
@@ -965,12 +970,20 @@ footer {
         padding: 0.5rem 1rem;
     }
 
+    .slider-banner {
+        background: transparent;
+    }
+
     .slider-container {
         height: 420px;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     .slide img {
-        object-fit: contain;
+        object-fit: cover;
+        width: 100%;
     }
 
     .slider-btn {
@@ -1007,13 +1020,21 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .slider-banner {
+        background: transparent;
+    }
+
     .slider-container {
         height: 360px;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     .slide img {
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
+        width: 100%;
     }
 
     .slider-btn {
@@ -1079,8 +1100,15 @@ footer {
         right: -6px;
     }
 
+    .slider-banner {
+        background: transparent;
+    }
+
     .slider-container {
         height: 320px;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     .slide {
@@ -1088,8 +1116,9 @@ footer {
     }
 
     .slide img {
-        object-fit: contain;
+        object-fit: cover;
         padding: 0;
+        width: 100%;
     }
 
     .slider-btn {
@@ -1125,12 +1154,24 @@ footer {
         gap: 1rem;
     }
 
+    .product-footer {
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+    }
+
     .product-price {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        flex: 1;
+        min-width: 0;
     }
 
     .add-to-cart {
-        padding: 0.6rem 1rem;
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+        flex-shrink: 0;
+    }
+
+    .add-to-cart i {
         font-size: 0.9rem;
     }
 
