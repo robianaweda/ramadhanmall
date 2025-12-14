@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadhan Mall - Toko Kebutuhan Muslim</title>
+    <link rel="icon" type="image/png" href="images/logo/Favicon_RamadhanMall.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="images/logo/Logo_RamadhanMall.png" alt="Ramadhan Mall Logo" class="brand-logo">
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">Beranda</a>
+                    <a href="#products" class="nav-link">Produk</a>
+                    <a href="#about" class="nav-link">Tentang</a>
+                    <a href="#contact" class="nav-link">Kontak</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Cari produk...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Slider Banner Section -->
+    <section class="slider-banner" id="home">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide active">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_1.png">
+                        <img src="images/banners/Slider_1.png" alt="Banner 1">
+                    </picture>
+                </div>
+                <div class="slide">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_2.png">
+                        <img src="images/banners/Slider_2.png" alt="Banner 2">
+                    </picture>
+                </div>
+                <div class="slide">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_3.png">
+                        <img src="images/banners/Slider_3.png" alt="Banner 3">
+                    </picture>
+                </div>
+                <div class="slide">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_4.png">
+                        <img src="images/banners/Slider_5.png" alt="Banner 4">
+                    </picture>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="slider-btn prev" id="prevBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn next" id="nextBtn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Dots Indicator -->
+            <div class="slider-dots" id="sliderDots"></div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Kategori Produk</h2>
+            <div class="category-grid">
+                <button class="category-card active" data-category="all">
+                    <i class="fas fa-th"></i>
+                    <span>Semua</span>
+                </button>
+                <button class="category-card" data-category="alquran">
+                    <i class="fas fa-book-quran"></i>
+                    <span>Al-Qur'an</span>
+                </button>
+                <button class="category-card" data-category="kitab">
+                    <i class="fas fa-book"></i>
+                    <span>Kitab</span>
+                </button>
+                <button class="category-card" data-category="sajadah">
+                    <i class="fas fa-pray"></i>
+                    <span>Sajadah</span>
+                </button>
+                <button class="category-card" data-category="pakaian">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Pakaian</span>
+                </button>
+                <button class="category-card" data-category="aksesori">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <span>Aksesori</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Produk Kami</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Ramadhan Mall</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Ramadhan Mall adalah toko online terpercaya yang menyediakan berbagai kebutuhan muslim berkualitas tinggi. Kami berkomitmen untuk menyediakan produk-produk terbaik yang dapat menunjang ibadah dan kehidupan sehari-hari Anda.</p>
+                    <div class="features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Produk Berkualitas</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Harga Terjangkau</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Pengiriman Cepat</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Pelayanan Ramah</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Jl. Raya Ramadhan No. 123, Jakarta</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telepon</h4>
+                            <p>+62 812-3456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@ramadhanmall.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Jam Operasional</h4>
+                            <p>Senin - Sabtu: 08.00 - 20.00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo/Logo_RamadhanMall.png" alt="Ramadhan Mall Logo" class="footer-logo">
+                    <h3>Ramadhan Mall</h3>
+                    <p>Pusat Kebutuhan Muslim Terlengkap</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Link Cepat</h4>
+                    <a href="#home">Beranda</a>
+                    <a href="#products">Produk</a>
+                    <a href="#about">Tentang</a>
+                    <a href="#contact">Kontak</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ramadhan Mall. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Keranjang Belanja</h3>
+                <button class="close-cart" id="closeCart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically loaded here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">Rp 0</span>
+                </div>
+                <button class="btn-checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
