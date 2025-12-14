@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     loadCartFromStorage();
     initializeSlider();
-    setupLazyLoading();
+    // setupLazyLoading(); // Disabled - lazy loading removed
 });
 
 // Display Products
@@ -311,7 +311,7 @@ function createProductCard(product) {
         <div class="product-image">
             <picture>
                 <source srcset="${webpImage}" type="image/webp">
-                <img src="${product.image}" alt="${product.name}" loading="lazy">
+                <img src="${product.image}" alt="${product.name}">
             </picture>
             ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
         </div>
@@ -649,7 +649,9 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Lazy Loading Images
+// Lazy Loading Images - DISABLED
+// Uncomment this function if you want to re-enable lazy loading
+/*
 function setupLazyLoading() {
     // Check if IntersectionObserver is supported
     if ('IntersectionObserver' in window) {
@@ -725,3 +727,4 @@ function setupLazyLoading() {
         });
     }
 }
+*/
