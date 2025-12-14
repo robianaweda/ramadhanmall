@@ -296,10 +296,12 @@ header {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
     color: var(--dark-color);
     position: relative;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .section-title::after {
@@ -970,6 +972,11 @@ footer {
         padding: 0.5rem 1rem;
     }
 
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
     .slider-banner {
         background: transparent;
     }
@@ -1020,6 +1027,11 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.75rem;
+    }
+
     .slider-banner {
         background: transparent;
     }
@@ -1098,6 +1110,11 @@ footer {
         font-size: 0.65rem;
         top: -6px;
         right: -6px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
     }
 
     .slider-banner {
