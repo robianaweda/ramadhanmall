@@ -304,9 +304,15 @@ function createProductCard(product) {
     const card = document.createElement('div');
     card.className = 'product-card';
 
+    // Generate WebP path from original image path
+    const webpImage = product.image.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+
     card.innerHTML = `
         <div class="product-image">
-            <img src="${product.image}" alt="${product.name}" loading="lazy">
+            <picture>
+                <source srcset="${webpImage}" type="image/webp">
+                <img src="${product.image}" alt="${product.name}" loading="lazy">
+            </picture>
             ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
         </div>
         <div class="product-info">

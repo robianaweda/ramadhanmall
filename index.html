@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Preload critical images -->
+    <link rel="preload" as="image" href="images/banners/Slider_1.webp" media="(min-width: 769px)" type="image/webp">
     <link rel="preload" as="image" href="images/banners/Slider_1.png" media="(min-width: 769px)">
+    <link rel="preload" as="image" href="images/banners/mobile/Slider_Mobile_1.webp" media="(max-width: 768px)" type="image/webp">
     <link rel="preload" as="image" href="images/banners/mobile/Slider_Mobile_1.png" media="(max-width: 768px)">
 </head>
 <body>
@@ -45,25 +47,33 @@
             <div class="slider-wrapper">
                 <div class="slide active">
                     <picture>
+                        <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_1.webp" type="image/webp">
                         <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_1.png">
+                        <source srcset="images/banners/Slider_1.webp" type="image/webp">
                         <img src="images/banners/Slider_1.png" alt="Banner 1" fetchpriority="high">
                     </picture>
                 </div>
                 <div class="slide">
                     <picture>
+                        <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_2.webp" type="image/webp">
                         <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_2.png">
+                        <source srcset="images/banners/Slider_2.webp" type="image/webp">
                         <img src="images/banners/Slider_2.png" alt="Banner 2" loading="lazy">
                     </picture>
                 </div>
                 <div class="slide">
                     <picture>
+                        <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_3.webp" type="image/webp">
                         <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_3.png">
+                        <source srcset="images/banners/Slider_3.webp" type="image/webp">
                         <img src="images/banners/Slider_3.png" alt="Banner 3" loading="lazy">
                     </picture>
                 </div>
                 <div class="slide">
                     <picture>
+                        <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_4.webp" type="image/webp">
                         <source media="(max-width: 768px)" srcset="images/banners/mobile/Slider_Mobile_4.png">
+                        <source srcset="images/banners/Slider_5.webp" type="image/webp">
                         <img src="images/banners/Slider_5.png" alt="Banner 4" loading="lazy">
                     </picture>
                 </div>

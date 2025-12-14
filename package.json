@@ -1,0 +1,19 @@
+{
+  "name": "ramadhanmall",
+  "version": "1.0.0",
+  "description": "Ramadhan Mall - Toko Kebutuhan Muslim",
+  "scripts": {
+    "convert-webp": "node convert-to-webp.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "ramadhan",
+    "muslim",
+    "webp"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sharp": "^0.33.0"
+  }
+}
