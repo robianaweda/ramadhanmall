@@ -281,6 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     loadCartFromStorage();
     initializeSlider();
+    setupLazyLoading();
 });
 
 // Display Products
@@ -641,3 +642,80 @@ window.addEventListener('scroll', () => {
         navbar.style.padding = '1rem 0';
     }
 });
+
+// Lazy Loading Images
+function setupLazyLoading() {
+    // Check if IntersectionObserver is supported
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const parent = img.closest('.product-image');
+
+                    // Add loading class for blur effect
+                    img.classList.add('loading');
+
+                    // Handle image load
+                    img.addEventListener('load', function onLoad() {
+                        img.classList.remove('loading');
+                        img.classList.add('loaded');
+                        if (parent) {
+                            parent.classList.add('image-loaded');
+                        }
+                        img.removeEventListener('load', onLoad);
+                    });
+
+                    // Handle image error
+                    img.addEventListener('error', function onError() {
+                        img.classList.remove('loading');
+                        if (parent) {
+                            parent.classList.add('image-loaded');
+                        }
+                        img.removeEventListener('error', onError);
+                    });
+
+                    // Stop observing this image
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '50px', // Start loading 50px before entering viewport
+            threshold: 0.01
+        });
+
+        // Observe all lazy images
+        const observeImages = () => {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        };
+
+        // Initial observation
+        observeImages();
+
+        // Re-observe when new products are loaded
+        const gridObserver = new MutationObserver(() => {
+            observeImages();
+        });
+
+        gridObserver.observe(productsGrid, {
+            childList: true,
+            subtree: true
+        });
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        lazyImages.forEach(img => {
+            const parent = img.closest('.product-image');
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+                if (parent) {
+                    parent.classList.add('image-loaded');
+                }
+            });
+        });
+    }
+}

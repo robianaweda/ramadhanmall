@@ -874,6 +874,51 @@ footer {
     transform: translateY(-2px);
 }
 
+/* Image Loading Optimization */
+img {
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+img.loading {
+    opacity: 1;
+    filter: blur(10px);
+    transform: scale(1.05);
+}
+
+img.loaded {
+    filter: blur(0);
+    transform: scale(1);
+}
+
+/* Product Image Placeholder */
+.product-image {
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s linear infinite;
+}
+
+.product-image.image-loaded {
+    background: #f8f9fa;
+    animation: none;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
