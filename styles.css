@@ -369,17 +369,38 @@ header {
     background: linear-gradient(135deg, rgba(242, 101, 34, 0.05), rgba(255, 140, 66, 0.08));
 }
 
-.category-card i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
+.category-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 1;
     transition: all 0.3s;
 }
 
-.category-card.active i {
-    color: var(--secondary-color);
+.category-icon picture {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s;
+}
+
+.category-card:hover .category-icon img {
     transform: scale(1.1);
+}
+
+.category-card.active .category-icon img {
+    transform: scale(1.15);
 }
 
 .category-card span {
@@ -1220,6 +1241,11 @@ img.loaded {
 
     .category-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-icon {
+        width: 60px;
+        height: 60px;
     }
 
     .products-grid {
